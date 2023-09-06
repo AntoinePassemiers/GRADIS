@@ -2,15 +2,9 @@
 % Expression file contains the gene expressions of the genes in Genes.xlsx file
 % The Network.xlsx file contains three columns. First column is the TF, second column is the target and third column indicates the existence of a regulation
 
-
-clear, clc
+function exitcode = run_gradis_neg(EXPfilename, GENEfilename, NETfilename)
 
 %% Loading data
-
-EXPfilename = 'Expression.txt';
-GENEfilename = 'Genes.xlsx';
-NETfilename = 'Network.xlsx';
-
 disp('Loading data...     (takes a while)');
 
 T = readtable(EXPfilename);
@@ -243,3 +237,5 @@ plot(X_PR,Y_PR,'Color',[0.50,0.50,0.50]);
 xlabel('Recall')
 ylabel('Precision')
 title('PR')
+
+end
